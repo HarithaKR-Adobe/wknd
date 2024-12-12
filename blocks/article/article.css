@@ -1,0 +1,43 @@
+.article.block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+
+    .article-header {
+        margin-bottom: 5px;
+        padding: 0 12px;
+    }
+
+    .article-card {
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+
+        & > a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+    }
+
+    .article-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .article-image {
+        width: 100%;
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .article-content {
+        padding: 0 12px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+}

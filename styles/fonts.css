@@ -9,6 +9,18 @@
 }
 
 @font-face {
+  font-family: 'wknd-icon-fonts';
+  src:  url('../fonts/wknd-icon-font.eot?1jemvo');
+  src:  url('../fonts/wknd-icon-font.eot?1jemvo#iefix') format('embedded-opentype'),
+    url('../fonts/wknd-icon-font.ttf?1jemvo') format('truetype'),
+    url('../fonts/wknd-icon-font.woff?1jemvo') format('woff'),
+    url('../fonts/wknd-icon-font.svg?1jemvo#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
   font-family: roboto;
   font-style: normal;
   font-weight: 700;

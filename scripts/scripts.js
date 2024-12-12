@@ -124,6 +124,13 @@ async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
   loadDelayed();
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 30) {
+      document.body.classList.add("scrolly");
+    } else {
+      document.body.classList.remove("scrolly");
+    }
+  })
 }
 
 loadPage();
