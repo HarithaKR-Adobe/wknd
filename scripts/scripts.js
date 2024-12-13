@@ -125,10 +125,16 @@ async function loadPage() {
   await loadLazy(document);
   loadDelayed();
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 30) {
-      document.body.classList.add("scrolly");
-    } else {
+    const body = document.body;
+    const isScrolly = body.classList.contains("scrolly");
+    const scrollYPosition = window.scrollY;
+    if (scrollYPosition < 114 && isScrolly) {
       document.body.classList.remove("scrolly");
+    } else if (scrollYPosition >= 114 && !isScrolly) {
+      document.body.classList.add("scrolly");
+      if (scrollYPosition < 120) {
+        window.scrollTo(window.scrollX, 120);
+      }
     }
   })
 }
