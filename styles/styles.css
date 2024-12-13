@@ -25,13 +25,13 @@
   --heading-font-family: serif, roboto-condensed, roboto-condensed-fallback, sans-serif;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 19px;
+  --body-font-size-m: 18px;
+  --body-font-size-s: 16px;
   --body-font-size-xs: 17px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 55px;
-  --heading-font-size-xl: 44px;
+  --heading-font-size-xxl: 34px;
+  --heading-font-size-xl: 34px;
   --heading-font-size-l: 34px;
   --heading-font-size-m: 27px;
   --heading-font-size-s: 24px;
@@ -66,8 +66,8 @@
     --body-font-size-xs: 14px;
 
     /* heading sizes */
-    --heading-font-size-xxl: 45px;
-    --heading-font-size-xl: 36px;
+    --heading-font-size-xxl: 28px;
+    --heading-font-size-xl: 28px;
     --heading-font-size-l: 28px;
     --heading-font-size-m: 22px;
     --heading-font-size-s: 20px;
@@ -76,26 +76,56 @@
 }
 
 body {
-  display: none;
   margin: 0;
-  background-color: var(--background-color);
+  background-color: var(--light-color);
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
 }
 
+.header-wrapper {
+  grid-area: hd
+}
+
+main {
+  grid-area: main
+}
+
+.footer-wrapper {
+  grid-area: ft
+}
+
+.nav-sidebar-wrapper {
+  grid-area: nav
+}
+
 body.appear {
-  display: block;
+  display: grid;
+  grid-template-columns: 0 1fr;
+  grid-auto-rows: auto;
+  grid-template-areas:
+      "nav hd "
+      "nav main "
+      "nav ft";
+  transition: all 0.3s ease-in;
 }
 
 header {
   height: var(--nav-height);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: var(--light-color);
+  transition: height 0.3s ease-in;
 }
 
-header .header,
-footer .footer {
-  visibility: hidden;
+.scrolly {
+  header {
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, .26);
+    height: 94px;
+  }
 }
 
 header .header[data-block-status="loaded"],
@@ -147,8 +177,9 @@ pre {
   white-space: pre;
 }
 
-main > div {
-  margin: 40px 16px;
+main {
+  position: relative;
+  margin: 40px 0;
 }
 
 input,
@@ -233,22 +264,22 @@ main img {
 }
 
 /* sections */
-main > .section {
-  margin: 40px 0;
-}
 
-main > .section > div {
+main > .section > div,
+header .header.block {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
 }
 
-main > .section:first-of-type {
-  margin-top: 0;
+footer .footer.block {
+  padding: 0 24px;
 }
 
 @media (width >= 900px) {
-  main > .section > div {
+  main > .section > div,
+  header .header.block, 
+  footer .footer.block  {
     padding: 0 32px;
   }
 }

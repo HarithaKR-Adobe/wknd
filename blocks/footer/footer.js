@@ -14,7 +14,33 @@ export default async function decorate(block) {
   // decorate footer DOM
   block.textContent = '';
   const footer = document.createElement('div');
+  footer.classList.add("footer", "block");
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
-  block.append(footer);
+  const footerSections = footer.querySelectorAll(".section");
+
+  const logoImgUrl = footerSections[0].querySelector("img").src;
+  const footerMenuList = footerSections[0].querySelector("ul");
+  const footerMenu = document.createElement("div");
+  footerMenu.classList.add("footer-menu-section");
+  footerMenu.innerHTML = `
+    <img class="wknd-logo-img" src="${logoImgUrl}" />
+  `;
+  footerMenuList.classList.add("footer-menu");
+  const currentLink = window.location.href;
+  footerMenuList.querySelectorAll("li").forEach((item) => {
+    if (item.querySelector("a").href === currentLink) {
+      item.classList.add("active");
+    }
+  })
+  footerMenu.appendChild(footerMenuList);
+  footerSections[0].replaceWith(footerMenu)
+  
+
+  const copyRightSection = document.createElement("div");
+  copyRightSection.classList.add("section", "copy-right");
+  copyRightSection.innerHTML = footerSections[1].querySelector(".default-content-wrapper").innerHTML;
+  footerSections[1].replaceWith(copyRightSection);
+  copyRightSection.querySelectorAll("a").forEach((a) => a.target = "_blank");
+  block.replaceWith(footer);
 }

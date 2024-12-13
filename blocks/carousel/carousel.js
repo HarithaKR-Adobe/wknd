@@ -58,11 +58,11 @@ export default function decorate(block) {
 
     const leftArrow = document.createElement("button");
     leftArrow.classList.add("arrow", "left");
-    leftArrow.innerHTML = "&#10094";
+    leftArrow.innerHTML = "&#xe912;";
 
     const rightArrow = document.createElement("button");
     rightArrow.classList.add("arrow", "right");
-    rightArrow.innerHTML = "&#10095";
+    rightArrow.innerHTML = "&#xe911;";
     
     const indicators = document.createElement("div");
     indicators.classList.add("indicators");

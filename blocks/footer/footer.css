@@ -1,20 +1,50 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
-}
+footer .footer.block {
+  background: var(--text-color);
+  color: var(--light-color);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .wknd-logo-img {
+    height: 52px;
+  }
 
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
-}
+  .footer-menu-section {
+    display: flex;
+    justify-content: space-between;
 
-footer .footer p {
-  margin: 0;
-}
+    .footer-menu {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      flex-grow: 1;
+      justify-content: flex-start;
+      align-items: center;
 
-@media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+      .active a {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      a {
+        color: var(--light-color);
+        text-transform: uppercase;
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+      }
+    }
+  }
+
+  .section.copy-right {
+    font-size: 13px;
+    margin-top: 40px;
+
+    a {
+      color: var(--light-color);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
   }
 }

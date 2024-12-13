@@ -17,12 +17,12 @@
     border-radius: 5px;
     outline: none;
     background: #f4f4f4;
-    border: 1px solid transparent;
+    border: 1px solid #d4d4d4;;
     color: #515151;
 }
 
 .search-input-wrapper .input:focus {
-    border: 1px solid #d4d4d4;
+    border: 1px solid #b9b9b9;
 }
 
 .search__loading-indicator {
