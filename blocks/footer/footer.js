@@ -27,7 +27,7 @@ export default async function decorate(block) {
     <img class="wknd-logo-img" src="${logoImgUrl}" />
   `;
   footerMenuList.classList.add("footer-menu");
-  const currentLink = window.location.href;
+  const currentLink = window.location.href.split("?")[0];
   footerMenuList.querySelectorAll("li").forEach((item) => {
     if (item.querySelector("a").href === currentLink) {
       item.classList.add("active");
