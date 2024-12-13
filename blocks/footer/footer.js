@@ -29,7 +29,7 @@ export default async function decorate(block) {
   footerMenuList.classList.add("footer-menu");
   const currentLink = window.location.href;
   footerMenuList.querySelectorAll("li").forEach((item) => {
-    if (currentLink.contains(item.querySelector("a").href)) {
+    if (currentLink.includes(item.querySelector("a").href)) {
       item.classList.add("active");
     }
   })

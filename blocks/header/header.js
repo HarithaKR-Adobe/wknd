@@ -35,7 +35,7 @@ function renderMenuItems(menuSection) {
   menus.querySelectorAll("li").forEach((li) => {
     li.classList.add("menu-item");
     const currentLink = li.querySelector("a").href;
-    if (window.location.href.contains(currentLink)) {
+    if (window.location.href.includes(currentLink)) {
       li.classList.add("active");
     }
   });

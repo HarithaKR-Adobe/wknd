@@ -12,7 +12,7 @@ function changeHandler(timer, searchIcon, loadingIcon) {
     }, 300);
 }
 
-export default function decorate(block) {
+export default async function decorate(block) {
     const inputWrapper = document.createElement("div");
     inputWrapper.classList.add("search-input-wrapper");
     const searchIcon = document.createElement("span");
@@ -27,7 +27,23 @@ export default function decorate(block) {
     inputWrapper.appendChild(input);
     block.replaceWith(inputWrapper);
     const timer = null;
+    
     input.addEventListener("input", () => {
         changeHandler(timer, searchIcon, loadingIcon);
-    })
+    });
+    const redirectResp = await fetch("/redirects.json");
+    const redirectUrls = await redirectResp.json();
+    const searchRedirectMap = redirectUrls.data.find((item) => item.Source === "/search");
+    if (searchRedirectMap) {
+        input.addEventListener("keypress", (evt) => {
+            if (evt.code === "Enter" && evt.keyCode === 13 ) {
+                const query = evt.currentTarget.value;
+                if (query.length > 0) {
+                    const url = new URL(`${searchRedirectMap.Destination}?q=${query}`);
+                    window.location.href = url;
+                }
+            }
+        })
+    }
+    
 }
