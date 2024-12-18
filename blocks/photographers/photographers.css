@@ -19,8 +19,6 @@ h4.photographer__name {
     align-self: flex-start;
 }
 
-p.photographer__desc {}
-
 .photographer__works {
     display: flex;
     flex-direction: row;
