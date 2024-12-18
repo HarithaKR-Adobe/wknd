@@ -1,0 +1,34 @@
+.photographers.block {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.photographers__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+img.photographer__image {
+    height: 30rem;
+}
+
+h4.photographer__name {
+    align-self: flex-start;
+}
+
+p.photographer__desc {}
+
+.photographer__works {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.photographer__works img {
+    height: 15rem;
+}
