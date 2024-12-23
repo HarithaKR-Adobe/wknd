@@ -3,10 +3,11 @@
   display: flex;
   align-items: center;
   margin: auto;
+  gap: 10px;
 }
 
 .header.block .wknd-logo-img {
-  height: 50px;
+  height: 30px;
 }
 
 .header.block .header-menu {
@@ -72,12 +73,13 @@
   font-size: 32px;
   display: none;
   padding: 0;
-  margin-right: 32px;
   border-radius: 0;
+  margin-bottom: 24px;
 }
 
 .header.block .nav-hamburger-icon {
   font-family: "wknd-icon-fonts";
+  font-size: 21px;
 }
 
 .header.block .nav-hamburger-icon::before {
@@ -105,6 +107,7 @@ body.show-nav .header.block .nav-hamburger-icon::before {
 
   body.show-nav {
     grid-template-columns: 250px 1fr;
+    overflow-x: hidden;
   }
   
   .show-nav .nav-sidebar-wrapper {
@@ -115,5 +118,11 @@ body.show-nav .header.block .nav-hamburger-icon::before {
     left: 0;
     bottom: 0;
     width: 250px;
+  }
+}
+
+@media screen and (width > 900px) {
+  .header.block .wknd-logo-img {
+    height: 50px;
   }
 }

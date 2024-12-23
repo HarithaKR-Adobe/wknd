@@ -48,3 +48,16 @@ footer .footer.block {
     }
   }
 }
+
+@media screen and (width <= 480px) {
+  footer .footer.block {
+    .footer-menu-section {
+      align-items: center;
+      .footer-menu {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 4px;
+      }
+    }
+  }
+}
