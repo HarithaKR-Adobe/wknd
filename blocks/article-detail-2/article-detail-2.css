@@ -32,4 +32,20 @@
             font-style: italic;
         }
     }
+
+    &.image-reverse {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            order: 0;
+            margin-bottom: 30px;
+        }
+        .content {
+            order: 2;
+        }
+        figure {
+            order: 1;
+        }
+    }
 }
