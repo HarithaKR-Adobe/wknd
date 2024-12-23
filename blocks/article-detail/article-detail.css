@@ -1,0 +1,18 @@
+.article-heading {
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        font-size: 16px;
+        color: var(--dark-color);
+    }
+}
+
+.article-content {
+    text-align: justify;
+    line-height: 2;
+    margin: 20px 0;
+}

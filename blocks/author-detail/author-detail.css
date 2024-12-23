@@ -1,0 +1,63 @@
+.author-detail.block {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .detail {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 0;
+        
+    }
+    h2 {
+        font-size: 24px;
+        font-weight: normal;
+        margin: 0;
+    }
+
+    p {
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1.84px;
+    }
+
+    .social-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0.05rem;
+        justify-content: center;
+        .icon {
+            font-family: "wknd-icon-fonts";
+        }
+
+        .icon-facebook::before {
+            content: "\e905";
+        }
+
+        .icon-twitter::before {
+            content: "\e904";
+        }
+
+        .icon-instagram::before {
+            content: "\e906";
+        }
+
+        .button {
+            background: var(--text-color);
+            border-radius: 0;
+            padding: 0.3em 1em;
+        }
+    }
+}

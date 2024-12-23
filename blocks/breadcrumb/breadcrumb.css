@@ -1,0 +1,38 @@
+.breadcrumb.block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 20px 0;
+
+    a {
+        background: none;
+        color: var(--text-color);
+        font-weight: 600;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .breadcrumb-item {
+        display: flex;
+        
+        &:not(:first-child) {
+            &:before {
+                content: "\ea1c";
+                font-family: "wknd-icon-fonts";
+                font-size: 12px;
+                color: var(--highlight-color);
+                padding: 0 10px;
+                text-decoration: none;
+            }
+        }
+
+    }
+    
+    
+}
